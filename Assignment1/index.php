@@ -44,16 +44,15 @@
                 <input type="text" class="form-control" id="inputZip">
               </div>
 
-
-              <div class="radio-inline">
+<!--QUESTION HERE ABOUT DOING AN IN-LINE RADIO -->
+              <div class=".form-check .form-check-inline">
                 <input class="form-check-input" type="radio" name="genderOptions" id="male" value="option1">
                 <label class="form-check-label" for="male">Male</label>
               </div>
-              <div class="radio-inline">
-                <input class="form-check-input" type="radio" name="genderOptions" id="female" value="option1">
+              <div class=".form-check .form-check-inline">
+                <input class="form-check-input" type="radio" name="genderOptions" id="female" value="option2">
                 <label class="form-check-label" for="female">Female</label>
               </div>
-
 
 
               <div class="col-12">
