@@ -26,6 +26,28 @@
         <h2>Hello Class</h2>
         <p style= "color:blue">This is CPS276. </p>
 
+        <p>Simple Unordered List</p>
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+            <li>list item 4</li>
+        </ul>
+
+        <p>Nested Unordered List</p>
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3
+                <ul>
+                    <li>sublist item 1</li>
+                    <li>sublist item 2</li>
+                </ul>
+            </li>
+            <li>list item 4</li>
+        </ul>
+
+
         <ul>
             <oi>List 1 </oi>
             <oi>List 2 

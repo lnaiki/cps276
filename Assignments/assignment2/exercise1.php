@@ -1,0 +1,30 @@
+<?php      
+           
+    $output = "";
+    for ($i = 1; $i < 5; $i++){
+        $output.= '<li>'.$i . '</li> <ul>' ;
+            for ($j = 1; $j < 6; $j++){
+            $output .= '<li>' . $j . '</li>';
+            }
+    $output .= '</ul>';
+    }
+        
+              
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <ul>
+        <?php echo $output?>
+        </ul>
+
+</body>
+</html>
