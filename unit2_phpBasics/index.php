@@ -26,19 +26,21 @@
     echo "this is a php block without the ending.";
     ?>  
 
-    <p>Example of gettype method:<?php
-    $a="green";
-    $b=45;
-    $c=45.23456;
-    $d=true;
-    $e=array();
-    $f=null;
-    echo gettype($a)."\n"; //OUTPUTS STRING
-    echo gettype($b)."\n"; //OUTPUTS INTEGER
-    echo gettype($c)."\n"; //OUTPUTS DOUBLE
-    echo gettype($d)."\n"; //OUTPUTS BOOLEAN
-    echo gettype($e)."\n"; //OUTPUTS ARRAY
-    echo gettype($f)."\n"; //OUTPUTS NULL?>
+    <p>Example of gettype method:
+        <?php
+        $a="green";
+        $b=45;
+        $c=45.23456;
+        $d=true;
+        $e=array();
+        $f=null;
+        echo gettype($a)."\n"; //OUTPUTS STRING
+        echo gettype($b)."\n"; //OUTPUTS INTEGER
+        echo gettype($c)."\n"; //OUTPUTS DOUBLE
+        echo gettype($d)."\n"; //OUTPUTS BOOLEAN
+        echo gettype($e)."\n"; //OUTPUTS ARRAY
+        echo gettype($f)."\n"; //OUTPUTS NULL
+        ?>
     </p>
    
     <p>Example of Casting:<?php
