@@ -7,13 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-<nav>
+        <nav>
                 <ul>
                     <li><a href="http://192.241.150.43/cps276/"">CPS 276 Home</a> </li>
                     <li><a href="index.php">Class Properties</a></li>
                     <li><a href="class_methods.php">Class Methods</a></li>
+                    <li><a href="class_encapsulation.php">Class Encapsulation</a></li>
+                    <li><a href="class_inheritance.php">Class Inheritence</a></li>
+                    <li><a href="class_constructors.php">Class Constructors</a></li>
 
                 </ul>
+        </nav>
 
 </body>
 </html>
@@ -70,4 +74,26 @@
        $obj5 = new MyClass4;
        echo $obj5->hello(); // DISPLAYS "HELLO, WORLD!"
        
+    echo "<br><br> ";
+
+    //Static Methods:
+    class Car {
+        public static function calcMpg( $miles, $gallons ) {    //Static because doesn't depend on the actual object to do its job.
+        return ( $miles / $gallons );
+        }
+    }
+       echo "MPG is: " . Car::calcMpg( 168, 6 );  //Calling code does NOT need to create a Car object to use calcMpg().
+    
+        echo "<br><br> ";
+
+    //Keyword; $self: Like $this but with methods instead of objects. 
+    class Car2 {
+        public static function calcMpg( $miles, $gallons ) {
+            return ( $miles / $gallons );
+            }
+        public static function displayMpg( $miles, $gallons ) {
+            echo "This car’s MPG is: " . self::calcMpg( $miles, $gallons );
+            }
+        }
+        echo Car2::displayMpg( 168, 6 );
 ?>
