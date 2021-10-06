@@ -17,7 +17,7 @@ class Calculator {
     public $int2; 
     public $strSolution = "";
 
-    function calc ($operator, $int1=null , $int2=null) {
+    function calc ($operator=null, $int1=null , $int2=null) {
 
         if (is_string($operator) && is_int($int1) && is_int($int2)) {
 
