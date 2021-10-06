@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-        <nav>
+<nav>
                 <ul>
                     <li><a href="http://192.241.150.43/cps276/">CPS 276 Home</a> </li>
-                    <li><a href="index.php">Class Properties</a></li>
+                    <li><a href="index.php">Classes Index</a></li>
+                    <li><a href="class_properties.php">Classes Properties</a></li>
                     <li><a href="class_methods.php">Class Methods</a></li>
                     <li><a href="class_encapsulation.php">Class Encapsulation</a></li>
                     <li><a href="class_inheritance.php">Class Inheritence</a></li>
