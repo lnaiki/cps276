@@ -15,11 +15,10 @@ class AddNamesProc{
 		$nameListArray = [];
 
 		if (isset($_POST['addName'])){
-			for each ($_POST['addName']){
-				array_push($nameListArray, $this->setName());
-				sort($nameListArray);
-				$nameList = implode ("/n", $nameListArray);
-			}	
+			array_push($nameListArray, $this->setName());
+			sort($nameListArray);
+			$nameList = implode ("\n", $nameListArray);
+		
 		}
 		else{
 			$nameList = "";
