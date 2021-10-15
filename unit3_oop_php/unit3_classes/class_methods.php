@@ -26,7 +26,8 @@
 <?php
     class MyClass {
         public function hello() {
-        echo "Hello, World!<br> ";
+       // echo "Hello, World!<br> ";
+            return "Hello, World!" ; // Better 
         }
 
         public function aMethod( $param1, $param2 ) {
@@ -35,7 +36,8 @@
         }
     }
     $obj = new MyClass;
-    $obj->hello();
+    //$obj->hello();
+    echo $obj-> hello(); //OR $var = $obj->hello(); to store for use later. 
 
 
 
@@ -87,7 +89,7 @@
     
         echo "<br><br> ";
 
-    //Keyword; $self: Like $this but with methods instead of objects. 
+    //Keyword; $self: Like $this but with statics instead of objects. 
     class Car2 {
         public static function calcMpg( $miles, $gallons ) {
             return ( $miles / $gallons );

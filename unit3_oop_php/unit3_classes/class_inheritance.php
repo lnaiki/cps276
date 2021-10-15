@@ -34,7 +34,7 @@
     }
 
     class Shape {
-        private $_color = "black";
+        private $_color = "black";  //private properties can be accessed by children.
         private $_filled = false;
         public function getColor() {
             return $this->color;
