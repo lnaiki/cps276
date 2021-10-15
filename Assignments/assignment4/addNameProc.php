@@ -2,8 +2,6 @@
 
 class AddNamesProc{
 
-	
-
 	function setName (){
 		$name = $_POST["name"]; 
 		$splitName = explode(" ", $name);
@@ -15,7 +13,7 @@ class AddNamesProc{
 	function addClearNames(){
 
 		$nameListArray = [];
-		
+
 		if (isset($_POST['addName'])){
 			array_push($nameListArray, $this->setName());
 			$nameList = implode ("/n", $nameListArray);
