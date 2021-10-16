@@ -1,5 +1,4 @@
 <?php
-
 $output = "";
 
 if (count($_POST) > 0){
@@ -9,7 +8,6 @@ if (count($_POST) > 0){
 }
 
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -36,12 +34,10 @@ if (count($_POST) > 0){
           <div class="form-group">
             <label for="name">Enter Name</label><input type="text" class="form-control" name="name" id="name">
           </div>
-          
 
           <div class="form-group">
             <label for="nameList">List of Names</label><textarea style="height: 500px;" class="form-control" id="nameList" name = "nameList"><?php echo $output ?> </textarea>
           </div>
-
     
         </form>
     </main>
