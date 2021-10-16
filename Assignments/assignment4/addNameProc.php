@@ -21,12 +21,10 @@ class AddNamesProc{
 			array_push($nameListArray, $this->setName());
 			sort($nameListArray);
 			$nameList = implode ("\n", $nameListArray);
-
 		}
 		else{
 			$nameList = "";
 		}
-		
 		return $nameList;
 	}
 }
