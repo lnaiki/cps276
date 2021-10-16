@@ -13,16 +13,20 @@ class AddNamesProc{
 	function addClearNames(){
 
 		$nameListArray = [];
+		$nameList = "";	
 
 		if (isset($_POST['addName'])){
+			$previousNames = $_POST["nameList"];
+			$nameListArray = explode ("\n", $previousNames);
 			array_push($nameListArray, $this->setName());
 			sort($nameListArray);
 			$nameList = implode ("\n", $nameListArray);
-		
+
 		}
 		else{
 			$nameList = "";
 		}
+		
 		return $nameList;
 	}
 }

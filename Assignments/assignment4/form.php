@@ -31,20 +31,15 @@ if (count($_POST) > 0){
           <div class="form-group">
           <input type="submit" class="btn btn-primary" name="addName" id="submitButton" value="Add Name" >
           <input type="submit" class="btn btn-primary" name="clearNames" id="submitButton" value="Clear Names" >
-
           </div>
 
           <div class="form-group">
-            <label for="name">Enter Name</label>
-            <input type="text" class="form-control" name="name" id="name">
+            <label for="name">Enter Name</label><input type="text" class="form-control" name="name" id="name">
           </div>
           
 
           <div class="form-group">
-            <label for="nameList">List of Names</label>
-            <textarea  style="height: 500px;" class="form-control" id="nameList" name = "nameList"> 
-                <?php echo $output ?> 
-            </textarea>
+            <label for="nameList">List of Names</label><textarea style="height: 500px;" class="form-control" id="nameList" name = "nameList"><?php echo $output ?> </textarea>
           </div>
 
     
