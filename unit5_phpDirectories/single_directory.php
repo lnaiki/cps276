@@ -3,7 +3,7 @@
 $msg = "";
 
 //ISSET CHECKS TO SEE IF A VARIBLE EXISTS. RETURNS TRUE IF IT DOES AND FALSE IF IT DOES NOT. 
-if(isset($_POST['create'])){
+if(isset($_POST['create'])){  //If Create Directory button is clicked
   
    
   $success = mkdir('mydirectory');
