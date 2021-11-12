@@ -37,6 +37,11 @@ if (count($_POST) > 0){
           </div>
 
           <div class="form-group">
+            <input type="file"  name="someFile" id="folderName">
+          </div>
+
+
+          <div class="form-group">
             <label for="folderContent">Folder Content</label><textarea style="height: 300px;" class="form-control" id="folderContent" name = "folderContent"> </textarea>
           </div>
 
