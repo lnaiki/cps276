@@ -24,14 +24,13 @@ class ProcessFile {
             return "File must be a pdf file";
         }
         else{
-            $this->moveFile();
+            $this->addFile();
             return "File has been added";
         }
 
     }
 
-    function moveFile(){
-        if(move_uploaded_file($_FILES["selectedFile"]["tmp_name"], "files/". $this->fileName)){
+    function addFile(){
             $cr = new CreateRead();
             return $cr->addFile();
         }
