@@ -11,7 +11,7 @@ class DatabaseConn {
       $dbHost = 'localhost';
       $dbName = 'lnaiki';
       $dbUsr = 'lnaiki'; 
-      $dbPass = 'Sugarbushpark89!'; 
+      $dbPass = 'password'; 
 
       $this->conn = new PDO('mysql:host=' . $dbHost . ';dbname=' . $dbName, $dbUsr, $dbPass);
       $this->conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); 
