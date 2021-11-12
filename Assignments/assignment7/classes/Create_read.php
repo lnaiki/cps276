@@ -15,7 +15,8 @@ class CreateRead extends PdoMethods{
         }
         else {
             if(counts($records)!=0){
-                return $this->createList($records);
+                    return $this->createList($records);
+                
             }
             else {
                 return "No files found. ";

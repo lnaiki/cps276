@@ -1,8 +1,7 @@
 <?php
-require_once 'classes/ListFilesProc.php';
-
-$fList = new FileList(); 
-$output = $fList->createList(); 
+require_once "classes/Create_read.php"; 
+$cr = new CreateRead();
+$output = $cr-> getFiles();
 ?>
 
 <!doctype html>
