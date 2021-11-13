@@ -5,8 +5,8 @@ $processFile = new ProcessFile;
 $output = "";
 
 if (isset($_POST['submit'])){
-
-  $output = $processFile->checkFile();
+  $processFile->buildFile();
+  $output = $processFile->processFile();
 }
 
 ?>

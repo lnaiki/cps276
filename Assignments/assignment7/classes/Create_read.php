@@ -1,8 +1,25 @@
 <?php
 require_once "Pdo_methods.php";
 
+
 class CreateRead extends PdoMethods{
-    
+  
+    private $error;
+    private $fileSize;
+    private $fileType;
+    private $selectedFileName;
+    private $enteredFileName;
+
+    function buildFile() {
+
+        $this->error = $_FILES["selectedFile"]["error"];
+        $this->fileSize = $_FILES["selectedFile"]["size"];
+        $this->fileType = $_FILES["selectedFile"]["type"];
+        $this->selectedFileName = $_FILES["selectedFile"]["name"];
+        $this->enteredFileName = $_POST["fileName"];
+    }
+
+
     public function getFiles() {
         $pdo = new PdoMethods();
         
@@ -14,7 +31,7 @@ class CreateRead extends PdoMethods{
             return "There has been an error processing your request"; 
         }
         else {
-            if(counts($records)!=0){
+            if(count($records)!=0){
                     return $this->createList($records);
                 
             }
@@ -30,10 +47,10 @@ class CreateRead extends PdoMethods{
         $sql = "INSERT INTO files (file_name, file_path, entered_file_name) VALUES (:fname, :fpath, :enteredname)";
 
         $bindings = [
-            [':fname', $_FILES["selectedFile"]["name"],'str'],
-            [':fpath',"files/" . $_FILES["selectedFile"]["name"],'str'],
-            [':enteredname',$_POST['enteredFileName'],'str']
-        ];
+            [':fname',$_FILES["selectedFile"]["name"],'str'],
+            [':fpath',"files/".$_FILES["selectedFile"]["name"],'str'],
+            [':enteredname',$_POST['fileName'],'str']
+            ];
 
         $result = $pdo->otherBinded($sql, $bindings);
 
