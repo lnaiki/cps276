@@ -21,7 +21,6 @@ class ProcessFile {
 
     function processFile() {
 
-
         if ($this->error ==4){
             return "No file was uploaded. Make sure you choose a file to upload.";
         }
@@ -30,7 +29,7 @@ class ProcessFile {
             return "File is too big";
         }
         else if ($this->fileType != 'application/pdf'){
-            return "File must be a pdf file." . " FileType you tried to upload is: " . $this->fileType;
+            return "File must be a pdf file.";
         }
         else{
             $this->addFile();
