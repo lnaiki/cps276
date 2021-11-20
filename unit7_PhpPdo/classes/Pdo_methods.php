@@ -42,7 +42,7 @@
         }
     
         /* THIS FUNCTION DOES THE SAME AS THE ABOVE BUT DOES NOT NEED ANY BINDED PARAMETERS ARE NO PARAMTERS ARE PASSED */
-        public function selectNotBinded($sql){
+        public function selectNotBinded($sql){      //selectNotBinded = doesn't let user enter, it is all hardcoded
                 $this->error = false;
                 
                 //I CREATE A TRY CATCH BLOCK TO CATCH ANY ERRORS THAT MIGHT ARRISE AND RETURNS AN ERROR MESSAGE.
