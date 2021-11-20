@@ -5,7 +5,17 @@
   $output = "";
 
   If (isset($_POST['submit'])){
-    $output = $cr->addNote();
+    date_default_timezone_set('America/Detroit');
+
+    if (strlen( ($_POST ['dateTime']) == 0)){
+      $output .= "Please enter a valid date and time";
+    }
+    elseif (strlen($_POST['note']) == 0 ){
+      $output .= "Please enter a note. ";
+    }
+    else {
+      $output = $cr->addNote();
+    }
   }
 
   ?>
