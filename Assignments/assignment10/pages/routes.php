@@ -2,8 +2,6 @@
 
 $path = "index.php?page=login";
 
-function nav () {
-    $nav = "";
 
     if ($_SESSION['status'] === "staff"){
         $nav .= <<<HTML
@@ -31,8 +29,6 @@ function nav () {
         $nav .= "ERROR";
     }
 
-    return $nav;
-}
 
 if(isset($_GET)){
     if($_GET['page'] === "addContact"){

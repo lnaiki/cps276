@@ -15,3 +15,8 @@ CREATE TABLE `contacts` (
    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status

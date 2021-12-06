@@ -13,7 +13,7 @@ if (isset($_POST['login'])){
     $sql = "SELECT email, password FROM admin WHERE email = :email";
 
     $bindings = array(
-        array{':email', $post['email'],'str'}
+        array(':email', $email,'str')
     );
 
     $records = $pdo->selectBinded($sql,$bindings);
@@ -30,15 +30,15 @@ if (isset($_POST['login'])){
                 $_SESSION['access'] = "accessGranted";
                 $_SESSION['email'] = $email;
                 $_SESSION['name'] = $name;
-                $_SESSION['status'] $status;
-                output .= "success";
+                $_SESSION['status'] = $status;
+                $output .= "success";
             }
             else{
-                output .= "There was a problem logging in with those credentials"; 
+                $output .= "There was a problem logging in with those credentials"; 
             }
         }
         else{
-            output .= "There was a problem logging in with those credentials";
+            $output .= "There was a problem logging in with those credentials";
         }
     }
 }
