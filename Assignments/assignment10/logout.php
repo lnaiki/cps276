@@ -1,8 +1,10 @@
 <?php
 
 function init(){
-    return ["<h1>Logout</h1>","<p> </p>"];
-
+        setcookie("PHPSESSID", "", time() - 3600, "/");
+        session_destroy();
+        header('location: login.php');
+        )
 }
 
 ?>

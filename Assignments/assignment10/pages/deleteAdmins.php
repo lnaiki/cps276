@@ -1,7 +1,6 @@
 <?php
 
 
-
 function init(){
 
     require_once 'classes/Pdo_methods.php';

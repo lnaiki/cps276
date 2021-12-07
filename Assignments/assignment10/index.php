@@ -15,13 +15,8 @@ require_once('pages/routes.php');
 
 	<body class="container">
 		<?php
-			/* THIS IS THE PHP PAGE  */
 			echo $nav;
-			
-			/* THE ACKNOWLEDGEMENT GOES HERE AS THE FIRST INDEX OF THE ARRAY  */
 			echo $result[0]; 
-
-			/* THE FORM GOES HERE.  LOOK AT THE FORM.PHP PAGE TO SEE HOW THE RETURN IN DONE. */
 			echo $result[1]; 
 		?>
 	</body>

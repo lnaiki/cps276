@@ -1,12 +1,9 @@
 <?php
 
-session_start(); 
-if ($_SESSION ['access'] !== "accessGranted"){
-    header ('Location: pages/login.php');
-}
 
-function init() {
-    return "<h1>Welcome</h1>" ;
+function init($name) {
+
+    return ["<h1>Welcome</h1>","<p><br>Welcome, </p>".$name] ;
 }
 
 ?>

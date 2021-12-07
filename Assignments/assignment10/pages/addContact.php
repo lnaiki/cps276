@@ -1,9 +1,7 @@
 <?php
 
-require_once('routes.php');
-$routes->security();
 
-require_once('classes/StickyForm.php');
+require_once('../classes/StickyForm.php');
 $stickyForm = new StickyForm();
 
 function init(){
@@ -224,7 +222,7 @@ function getForm($acknowledgement, $elementsArr){
       <button type="submit" name="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
-  HTML;
+HTML;
 
   return [$acknowledgement, $form];
 

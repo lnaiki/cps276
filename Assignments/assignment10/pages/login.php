@@ -1,100 +1,48 @@
 <?php
-require_once 'routes.php';
-require_once 'addAdmin.php';
+
 $output = "";
-$email = $_POST['email'];
-$name = getName($email);
-$status = getStatus($email);
 
+function init(){
 
-if (isset($_POST['login'])){
-
-    $pdo = PdoMethods(); 
-    $sql = "SELECT email, password FROM admin WHERE email = :email";
+  if (isset($_POST['login'])){
+    require_once "classes/Pdo_methods.php";
+    $pdo = new PdoMethods(); 
+    $sql = "SELECT email, password FROM admins WHERE email = :email";
 
     $bindings = array(
-        array(':email', $email,'str')
+        array(':email', $_POST['email'],'str')
     );
 
     $records = $pdo->selectBinded($sql,$bindings);
 
-    /**If there was a return error string */
     if ($records == 'error'){
         $output .= "There was an error logging in";
     }
-
     else{
         if (count($records) !=0){
-            if (password_verify($post['password'], $records[0]['password'])){
+            if (($_POST['password'] == $records[0]['password'])){
                 session_start(); 
-                $_SESSION['access'] = "accessGranted";
-                $_SESSION['email'] = $email;
-                $_SESSION['name'] = $name;
-                $_SESSION['status'] = $status;
-                $output .= "success";
+                $_SESSION['access'] = 'accessGranted';
+                $_SESSION['email'] = $_POST['email'];   
+                $_SESSION['name'] = getName($_POST['email']);
+                $_SESSION['status'] = getStatus($_POST['email']);
+                $output .= 'success';
             }
             else{
-                $output .= "There was a problem logging in with those credentials"; 
+                $output .= 'There was a problem logging in with those credentials'; 
             }
         }
         else{
-            $output .= "There was a problem logging in with those credentials";
+            $output .= 'There was a problem logging in with those credentials';
         }
     }
+    if ($output === 'success'){
+      header ('Location: index.php?page=welcome');
+    } 
 }
-
-if ($output === 'success'){
-    header ('Location: welcome.php');
-}
-
-
-function getName($email){
-
-  $pdo = new PdoMethods(); 
-  $sql = "SELECT name FROM admins WHERE email = '$email' ";
-
-  $records = $pdo -> selectNotBinded($sql);
-
-  if ($records == 'error'){
-      return "There has been an error processing your request.";
-  }
-  else {
-      if (count ($records) != 0){
-          return $this;
-      }
-      else {
-          return "No one found by that email address"; 
-      }
-  }  
-} 
-
-function getStatus($email){
-
-  $pdo = new PdoMethods(); 
-  $sql = "SELECT status FROM admins WHERE email = '$email' ";
-
-  $records = $pdo -> selectNotBinded($sql);
-
-  if ($records == 'error'){
-      return "There has been an error processing your request.";
-  }
-  else {
-      if (count ($records) != 0){
-          return $this;
-      }
-      else {
-          return "No one found by that email address"; 
-      }
-  }  
-}
-?>
-
-
-  <body>
-    <div class="container">
-      <h1>Login</h1>
-      
-      <form action="index.php" method="post">
+  
+$form = <<<HTML
+      <form action="index.php?page=login" method="post">
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
@@ -119,10 +67,45 @@ function getStatus($email){
         </div>
       </div>
       </form>
+HTML;
+
+return ["<h1>Login</h1><br>", $form];
+
+}
 
 
+function getName($email){
 
-    </div>
+  $pdo = new PdoMethods(); 
+  $sql = "SELECT name FROM admins WHERE email = '$email' ";
+  $records = $pdo -> selectNotBinded($sql);
+  if ($records == 'error'){
+      return "There has been an error processing your request.";
+  }
+  else {
+      if (count ($records) != 0){
+          return $this;
+      }
+      else {
+          return "No one found by that email address"; 
+      }
+  }  
+} 
 
-  </body>
-</html>
+function getStatus($email){
+  $pdo = new PdoMethods(); 
+  $sql = "SELECT status FROM admins WHERE email = '$email' ";
+  $records = $pdo -> selectNotBinded($sql);
+  if ($records == 'error'){
+      return "There has been an error processing your request.";
+  }
+  else {
+      if (count ($records) != 0){
+          return $this;
+      }
+      else {
+          return "No one found by that email address"; 
+      }
+  }  
+}
+?>
