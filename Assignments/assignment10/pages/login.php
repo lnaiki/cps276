@@ -76,6 +76,7 @@ return ["<h1>Login</h1><br>", $form];
 
 function getName($email){
 
+
   $pdo = new PdoMethods(); 
   $sql = "SELECT name FROM admins WHERE email = '$email' ";
   $records = $pdo -> selectNotBinded($sql);
@@ -84,7 +85,7 @@ function getName($email){
   }
   else {
       if (count ($records) != 0){
-          return $this;
+          return $records[0]['name'];
       }
       else {
           return "No one found by that email address"; 
@@ -101,7 +102,7 @@ function getStatus($email){
   }
   else {
       if (count ($records) != 0){
-          return $this;
+          return $records[0]['status'];
       }
       else {
           return "No one found by that email address"; 

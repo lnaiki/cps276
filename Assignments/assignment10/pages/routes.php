@@ -3,7 +3,6 @@
 $path = "index.php?page=login";
 $nav = "";
 
-
 $adminNav = <<<HTML
     <ul class="nav">
         <li class="nav-item"><a class="nav-link" href="index.php?page=addContact">Add Contact Information</a></li>
@@ -31,17 +30,17 @@ function security() {
     }
     else{
         if ($_SESSION['status'] == 'admin'){
-            $nav .= $adminNav;
+            $nav = $adminNav;
         }
-//        else{
-//            $nav .= $staffNav;
-//        }
-    }
+        else{
+            $nav = $staffNav;
+        }
+   } 
 }
 
 function admin(){
-
-
+    if ($_SESSION['status'] !== 'admin'){
+        header('location: ' .$path);
 }
 
 
